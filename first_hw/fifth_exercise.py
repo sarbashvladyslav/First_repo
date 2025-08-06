@@ -1,6 +1,6 @@
 import numpy as np
 
-"""def get_polynom(coords):
+def get_polynom(coords):
     n = len(coords)
 
     A = np.zeros((n, n))
@@ -17,9 +17,10 @@ import numpy as np
     return coefficients
  
 # Координати осі x не повинні бути однаковими
-coords = [(3, 4), (2, 7), (4, -12), (8, 9), (1, 14)]
+#coords = [(3, 4), (2, 7), (4, -12), (8, 9), (1, 14)]
+coords = [(1, 12), (3, 54), (-1, 2)]
 coefficients = get_polynom(coords)
-print(coefficients)"""
+print(coefficients)
 
 # Створенно за допомогою ChatGPT
 # np.polyfit виконує поліномальну апроксимацію, тобто найкраще наближення у випадку, якщо точки не лежать точно на одному поліномі.
