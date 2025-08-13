@@ -6,12 +6,13 @@ url = "https://uk.wikipedia.org/wiki/%D0%9D%D0%B0%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%
 
 #population_data = pd.read_html(url)[13]
 population_data = pd.read_html(url, match='Коефіцієнт народжуваності в регіонах України')[0]
-#print(population_data.head())
-#print(population_data.shape)
+print(population_data.head())
+print(population_data.shape)
 population_data = population_data.replace("—", np.nan)
-#print(population_data.dtypes)
+print(population_data.head())
+print(population_data.dtypes)
 population_data[['2014', '2019']] = population_data[['2014', '2019']].apply(pd.to_numeric)
-#print(population_data.isnull().sum())
+print(population_data.isnull().sum())
 #population_data = population_data.drop(27, axis=0, inplace=True)
 population_data = population_data[:-1]
 population_data = population_data.fillna(
@@ -22,8 +23,9 @@ population_data = population_data.fillna(
         "2014": population_data["2014"].mean(),
         "2019": population_data["2019"].mean()
         })
+print(population_data)
 #print(population_data[population_data['2019'] > population_data['2019'].mean()])
+print(population_data[population_data['2019'] > population_data['2019'].mean()]['Регіон'])
 print(population_data[population_data['2014'] == population_data['2014'].max()])
-#print(population_data)
 population_data["2019"].plot(kind='bar', title='Коефіцієнт народжуваності в Україні 2019 року')
-plt.show()
+#plt.show()
