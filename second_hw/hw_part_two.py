@@ -3,7 +3,8 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 
-"""file = os.path.abspath("2017_jun_final.csv")
+"""# Абсолютний шлях до файлу
+file = os.path.abspath("2017_jun_final.csv")
 print(file)"""
 
 os.chdir("d:/Studies/repos/First_repo/second_hw")
