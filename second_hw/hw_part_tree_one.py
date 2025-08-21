@@ -25,7 +25,7 @@ print(tables['genre'].unique())
 Відповідь: Унікальні жанри: 'Fiction' та 'Non Fiction'
 """
 
-tables['price'].plot(kind='hist', bins=20, title='Розподіл цін на книги')
+#tables['price'].plot(kind='hist', bins=20, title='Розподіл цін на книги')
 #plt.show()
 
 print(tables['price'].min())
@@ -94,3 +94,16 @@ authors_data = pd.concat([authors_books, authors_user_rating], axis=1)
 print(authors_data.sort_values(['name', 'user_rating']))
 
 # Який автор перший у списку? Відповідь: Muriel Barbery
+
+""" Треба доробити. Лінійна діаграмма відходить дуже погано
+top5_authors_by_number_of_books = authors_data.sort_values(['name'], ascending=False).head(5)
+
+fig, axs = plt.subplots(2, 1, figsize=(16, 8))
+plt.tight_layout()
+axs[0].plot(top5_authors_by_number_of_books.index, top5_authors_by_number_of_books['user_rating'], 'x:' , markerfacecolor='black', markersize=12, color='red')
+axs[0].set_title('Топ-5 авторів за рейтингом', fontsize=16)
+axs[1].plot(top5_authors_by_number_of_books.index, top5_authors_by_number_of_books['name'], 'x-.' , markerfacecolor='red', markersize=12, color='green')
+axs[1].set_title('Топ-5 авторів за кількістю книг', fontsize=16)
+
+
+plt.show()"""
